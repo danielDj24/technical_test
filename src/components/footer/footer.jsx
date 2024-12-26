@@ -10,12 +10,12 @@ const Footer = () => {
 
     // Función para manejar la validación y el envío
     const handleSubmit = (e) => {
-        e.preventDefault(); // Prevenir que el formulario se envíe automáticamente
+        e.preventDefault(); 
         if (email.trim() === '') {
-            setError('Please enter your email'); // Mostrar mensaje de error si el campo está vacío
+            setError('Please enter your email'); 
         } else {
-            setError(''); // Limpiar el error si el correo es válido
-            alert('Thank you for subscribing!'); // Lógica si el correo es válido (puedes reemplazar esto)
+            setError(''); 
+            alert('Thank you for subscribing!'); 
         }
     };
 
@@ -40,9 +40,9 @@ const Footer = () => {
                     <input 
                         type="email" 
                         placeholder="Enter your email" 
-                        className={`footer-email-input ${error ? 'border-red-500' : ''}`} // Agregar clase de error si hay uno
+                        className={`footer-email-input ${error ? 'border-red-500' : ''}`} 
                         value={email} 
-                        onChange={(e) => setEmail(e.target.value)} // Actualiza el estado del email
+                        onChange={(e) => setEmail(e.target.value)} 
                     />
                     {error && <p className="text-red-500 text-sm mt-1">{error}</p>} {/* Mostrar mensaje de error si está vacío */}
                     <div className="footer-subscribe">

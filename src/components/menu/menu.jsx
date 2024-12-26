@@ -19,7 +19,7 @@ const Menu = () => {
 
             {/* Parte inferior del menú */}
             <div className="menu-item-buttom">
-                <div className="menu-item-buttom-elements font-sf-pro text-18 leading-32">
+                <div className="menu-item-buttom-elements  font-sf-pro text-18 leading-32">
                     <a href="/">Home</a>
                     <a href="/">Products</a>
                     <a href="/">About</a>
