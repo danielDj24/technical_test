@@ -1,20 +1,27 @@
-import React, { useRef } from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/autoplay"; 
+import "swiper/css/autoplay";
 
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 // Archivo CSS con las clases personalizadas
 import "./carrouselProducts.css";
 
 const CarrouselProducts = ({ products, navigationPrevRef, navigationNextRef }) => {
+    useEffect(() => {
+        if (navigationPrevRef.current && navigationNextRef.current) {
+            navigationPrevRef.current.classList.add("custom-swiper-button-prev");
+            navigationNextRef.current.classList.add("custom-swiper-button-next");
+        }
+    }, [navigationPrevRef, navigationNextRef]);
+
     return (
-        <div className="product-carousel">
+        <div className="product-carousel relative">
             <Swiper
-                spaceBetween={0}
+                spaceBetween={10}
                 slidesPerView={4}
                 loop={true}
                 autoplay={{
@@ -26,12 +33,13 @@ const CarrouselProducts = ({ products, navigationPrevRef, navigationNextRef }) =
                     prevEl: navigationPrevRef.current,
                     nextEl: navigationNextRef.current,
                 }}
-                onBeforeInit={(swiper) => {
+                onSwiper={(swiper) => {
+                    // Vincula las referencias al swiper cuando esté listo
                     swiper.params.navigation.prevEl = navigationPrevRef.current;
                     swiper.params.navigation.nextEl = navigationNextRef.current;
+                    swiper.navigation.update();
                 }}
                 modules={[Navigation, Pagination, Autoplay]}
-                className="product-swiper"
             >
                 {products.map((product, index) => {
                     const discountedPrice = product.price * (1 - product.percentDiscount / 100);
@@ -46,7 +54,11 @@ const CarrouselProducts = ({ products, navigationPrevRef, navigationNextRef }) =
                                     className="product-image"
                                 />
                                 <h3 className="product-name">{product.product}</h3>
-                                <p className={`product-price ${product.percentDiscount === 0 ? 'center-price' : ''}`}>
+                                <p
+                                    className={`product-price ${
+                                        product.percentDiscount === 0 ? "center-price" : ""
+                                    }`}
+                                >
                                     <span className="discount-price">
                                         <strong>${discountedPrice.toFixed(2)}</strong>
                                     </span>
@@ -58,7 +70,11 @@ const CarrouselProducts = ({ products, navigationPrevRef, navigationNextRef }) =
                                 </p>
                                 {(product.percentDiscount > 0 || product.isNew) && (
                                     <p className="product-discount">
-                                        <strong>{product.percentDiscount > 0 ? `${product.percentDiscount}% off` : 'New'}</strong>
+                                        <strong>
+                                            {product.percentDiscount > 0
+                                                ? `${product.percentDiscount}% off`
+                                                : "New"}
+                                        </strong>
                                     </p>
                                 )}
                                 <div className={`${backgroundClass}`}></div>
@@ -68,8 +84,15 @@ const CarrouselProducts = ({ products, navigationPrevRef, navigationNextRef }) =
                 })}
             </Swiper>
 
-            <div className="swiper-button-prev" ref={navigationPrevRef}></div>
-            <div className="swiper-button-next" ref={navigationNextRef}></div>
+            {/* Botones de navegación */}
+            <div
+                ref={navigationPrevRef}
+                className="custom-swiper-button-prev swiper-button-prev"
+            ></div>
+            <div
+                ref={navigationNextRef}
+                className="custom-swiper-button-next swiper-button-next"
+            ></div>
         </div>
     );
 };

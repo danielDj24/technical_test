@@ -1,10 +1,10 @@
-import React, { useRef } from 'react';
+import React, { useRef,useEffect } from 'react';
 import Menu from "../../components/menu/menu";
 import Footer from "../../components/footer/footer";
 import BannerCarrousel from "../../components/carrousel/Bannercarrousel";
 import roseArrangementImage from "../../assets/Grupo -5.png"
 import CarrouselProducts from "../../components/carrouselProducts/carrouselProducts";
-
+import ImageCarousel from "../../components/carrouselImages/carrouselImages";
 //aseets images
 import saleImage from "../../assets/Grupo -8.png"
 import festImage from "../../assets/Grupo -9.png"
@@ -24,6 +24,13 @@ import bestProduct1 from "../../assets/Grupo 9122.png"
 import bestProduct2 from "../../assets/Grupo 9123.png"
 import bestProduct3 from "../../assets/sieirfhek.png"
 import bestProduct4 from "../../assets/Grupo 9124.png"
+
+//asets category
+import category1 from "../../assets/ramo-flores-hermosas-espacio-copia-(1).png"
+import category2 from "../../assets/caida-deja-marco-herbario.png"
+import category3 from "../../assets/flores-blancas-hoja-papel-negro.png";
+import category4 from "../../assets/chocolates-redondos-nuez-fondo-pantsdsdalla-rosa-roja.png";
+
 
 const Home = () => {
     // Lista de diccionarios con los datos de los banners
@@ -52,6 +59,9 @@ const Home = () => {
     const nextRef1 = useRef(null);
     const prevRef2 = useRef(null);
     const nextRef2 = useRef(null);
+    const prevRef3 = useRef(null);
+    const nextRef3 = useRef(null);
+
 
     const products = [
         {
@@ -149,6 +159,40 @@ const Home = () => {
         },
     ];
     
+    const imagesCategorys = [
+        {
+            title: "Flores",
+            content: "En ramo de rosas seleccionadas",
+            image:category1,
+        },
+        {
+            title: "Thanks giving",
+            content: "En ramo de rosas seleccionadas",
+            image: category2,
+        },
+        {
+            title: "Condolensia",
+            content: "En ramo de rosas seleccionadas",
+            image: category3,
+        },
+        {
+            title: "Detalles",
+            content: "En ramo de rosas seleccionadas",
+            image:category4,
+        },
+        {
+            title: "Condolensia",
+            content: "En ramo de rosas seleccionadas",
+            image: category3,
+        },
+        {
+            title: "Detalles",
+            content: "En ramo de rosas seleccionadas",
+            image:category4,
+        }
+    ]
+
+    useEffect(() => {}, []);
 
     return (
         <div className="flex flex-col min-h-screen">
@@ -164,7 +208,7 @@ const Home = () => {
                     </div>
 
                     {/* Título y carrusel de productos */}
-                    <div className="mt-12">
+                    <div className="mt-6 mb-[-12px]">
                     <h2 className="text-center text-2xl font-bold mb-6 h-10 flex items-center justify-center">
                         Top sellers
                     </h2>
@@ -174,23 +218,33 @@ const Home = () => {
                     </div>
 
                     <div className="bg-gray-200 p-6 rounded-lg flex justify-center items-center bg-[#F5F5F5] w-full h-[200px]">
-                    <div className="flex items-center mx-4">
-                        <img src={locationImage} alt="location image" className="w-[328px] h-[328px] bg-transparent object-contain ml-4" style={{ backgroundImage: "url('img/13.png')" }} />
-                        <div className="flex flex-col justify-center mr-8">
-                            <p className="text-lg text-pink-500">Flower delivery to:</p>
-                            <p className="text-lg">East Hartford, Hartford, Manchester, Glastonbury,</p>
-                            <p className="text-lg">Bolton, Willimantic, West Hartford, East Windsor, North Windsor</p>
-                            <a href="#" className="underline text-blue-500">Track your order.</a>
+                        <div className="flex items-center mx-4">
+                            <img src={locationImage} alt="location image" className="w-[328px] h-[328px] bg-transparent object-contain ml-4" style={{ backgroundImage: "url('img/13.png')" }} />
+                            <div className="flex flex-col justify-center mr-8">
+                                <p className="text-lg text-pink-500">Flower delivery to:</p>
+                                <p className="text-lg">East Hartford, Hartford, Manchester, Glastonbury,</p>
+                                <p className="text-lg">Bolton, Willimantic, West Hartford, East Windsor, North Windsor</p>
+                                <a href="#" className="underline text-blue-500">Track your order.</a>
+                            </div>
+                        </div>
+                        <div className="flex items-center mx-4">
+                            <img src={securrityImage} alt="security image" className="w-[328px] h-[328px] bg-transparent object-contain mr-4 " style={{ backgroundImage: "url('img/13.png')" }} />
+                            <div className="flex flex-col justify-center mr-8">
+                                <p className="text-lg text-pink-500">Our schedule:</p>
+                                <p className="text-lg">From 09:00 am to 04:00 pm Monday to Friday</p>
+                            </div>
                         </div>
                     </div>
-                    <div className="flex items-center mx-4">
-                        <img src={securrityImage} alt="security image" className="w-[328px] h-[328px] bg-transparent object-contain mr-4" style={{ backgroundImage: "url('img/13.png')" }} />
-                        <div className="flex flex-col justify-center mr-8">
-                            <p className="text-lg text-pink-500">Our schedule:</p>
-                            <p className="text-lg">From 09:00 am to 04:00 pm Monday to Friday</p>
+                    <div className="mt-12 relative ">
+                        {/* Fondo que cubre la mitad izquierda con border-radius en el lado derecho */}
+                        <div className="absolute inset-0 left-1/2 bg-[#F6DCDC] z-[-1] h-[340px] rounded-l-[58px]" />
+                        <h2 className="text-center text-2xl font-bold mb-6 relative z-10">
+                            Our categories
+                        </h2>
+                        <div className="px-6">
+                            <ImageCarousel images={imagesCategorys} navigationPrevRef={prevRef3} navigationNextRef={nextRef3} />
                         </div>
                     </div>
-                </div>
 
                     <div className="mt-12">
                         <h2 className="text-center text-2xl font-bold mb-6">
