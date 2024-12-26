@@ -16,7 +16,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0 90px;
+    padding: 0 80px;
 }
 
 .menu-item-contact {
@@ -46,6 +46,7 @@
     height: 56px;
     opacity: 1;
     margin-bottom: 5px;
+    margin-left: 70px;
 }
 
 .menu-item-buttom {
