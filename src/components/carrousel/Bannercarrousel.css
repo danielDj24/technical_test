@@ -261,13 +261,9 @@
         margin-left: 10%; /* Alinear la imagen más centrada */
     }
 
-    /* Ajustar los botones de navegación */
+    /* Ocultar los botones de navegación en pantallas pequeñas */
     .nav-buttons-container {
-        object-fit: contain;
-        left: 72%; /* Centrar los botones de navegación */
-        bottom: -60%; /* Colocar los botones justo debajo de la imagen */
-        transform: translateX(-50%); /* Ajustar el centrado */
-        gap: 10px; /* Aumentar el espacio entre los botones */
+        display: none; /* Esto oculta los botones */
     }
 
     .nav-button {
@@ -282,3 +278,4 @@
         top: 50%;
     }
 }
+

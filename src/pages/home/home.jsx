@@ -65,57 +65,96 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="bg-gray-300 p-6 rounded-[50px] flex flex-col lg:flex-row justify-center items-center bg-[#F5F5F5] w-full lg:h-[428px] relative overflow-hidden">
-    <div className="lg:absolute top-[50px] left-[102px] text-center lg:text-left">
-        <p className="text-4xl font-extrabold italic" style={{ letterSpacing: "0px", opacity: 1, color: "#FFAA01" }}>
-            Happy Thanksgiving
-        </p>
-    </div>
-
-    <div className="lg:absolute top-[160px] left-[104px] text-center lg:text-left">
-        <p className="text-lg font-medium text-[#606060]" style={{ letterSpacing: "0px", opacity: 1 }}>
-            See the best decorations for this celebration
-        </p>
-    </div>
-
-    <div className="lg:absolute top-[240px] left-[102px]">
-        <button className="w-[240px] h-[54px] bg-[#FFAA01] text-[#131313] font-medium rounded-[35px]">
-            Shop Now
-        </button>
-    </div>
-
-    <div className="relative flex flex-col items-center lg:items-start w-full">
-        {/* Aquí se ajustan las clases para pantallas pequeñas */}
-        <div className="flex flex-col sm:flex-row lg:flex-row space-y-6 sm:space-y-0 sm:space-x-6 lg:space-y-0 lg:space-x-6 z-[1] mt-6 lg:mt-0 w-full lg:absolute lg:top-[200px] lg:left-[92%] lg:transform lg:-translate-y-1/2 sm:absolute sm:top-[50%] sm:left-[62%] sm:transform sm:-translate-x-1/2 sm:-translate-y-1/2 sm:z-10">
-            {products.slice(0, 2).map((product, index) => (
-                <div key={index} className="w-full lg:w-[200px] h-auto lg:h-[300px] bg-white rounded-lg shadow-lg flex flex-col items-center p-4 relative sm:w-[240px] sm:h-[280px]">
-                    <img
-                        src={product.image}
-                        alt={`product ${index + 1}`}
-                        className="w-[70%] h-[170px] object-cover rounded-t-lg mb-3 z-10 sm:w-[60%] sm:h-[120px]"
-                    />
-                    <div className={`absolute top-0 left-0 w-full h-[120px] ${index === 0 ? 'bg-[#F7527A]' : 'bg-[#F5F5F5]'} rounded-t-lg z-0 sm:h-[100px]`} />
-                    <div className="absolute top-2 left-2 bg-[#FFAA01] text-white text-sm font-bold px-2 py-1 rounded-full z-20 sm:text-xs">
-                        {product.percentDiscount}% off
+                    <div className="bg-gray-200 p-6 rounded-lg flex flex-col sm:flex-row justify-center items-center bg-[#F5F5F5] w-full h-auto">
+                    <div className="flex items-center mx-4 mb-4 sm:mb-0 sm:max-w-[600px]">
+                        <img src={locationImage} alt="location image" className="w-[200px] sm:w-[328px] h-[200px]   bg-transparent object-contain ml-2 sm:ml-4" />
+                        <div className="flex flex-col justify-center sm:ml-6">
+                            <p className="text-lg text-[#F7527A]">Flower delivery to:</p>
+                            <p className="text-lg">East Hartford, Hartford, Manchester, Glastonbury,</p>
+                            <p className="text-lg">Bolton, Willimantic, West Hartford, East Windsor, North Windsor</p>
+                            <a href="#" className="underline text-[#F7527A]">Track your order.</a>
+                        </div>
                     </div>
-                    <p className="text-xl font-semibold text-center mt-3 sm:text-lg">{product.product}</p>
-                    <div className="flex justify-between items-center w-full px-2 mt-2">
-                        <p className="text-lg font-bold text-[#F7527A] sm:text-base">${product.price}</p>
-                        <p className="text-sm text-[#606060] sm:text-xs">{product.price}</p>
+                    <div className="flex items-center mx-4 sm:max-w-[600px]">
+                        <img src={securrityImage} alt="security image" className="w-[200px] sm:w-[328px] h-[200px]  bg-transparent object-contain mr-2 sm:mr-4" />
+                        <div className="flex flex-col justify-center sm:ml-6">
+                            <p className="text-lg text-[#F7527A]">Our schedule:</p>
+                            <p className="text-lg">From 09:00 am to 04:00 pm Monday to Friday</p>
+                        </div>
                     </div>
                 </div>
-            ))}
-        </div>
 
-        {/* Imagen */}
-        <img
-            src={shopImage}
-            alt="location image"
-            className="w-full lg:w-[535px] lg:ml-[790px] h-auto bg-transparent object-contain "
-        />
-    </div>
-</div>
 
+                    <div className="mt-[80px] relative">
+                        <div className="absolute inset-0 left-[450px] bg-[#F6DCDC] z-[-1] h-[340px] rounded-l-[58px]" />
+                        <h2 className="text-center text-3xl font-bold mb-6 relative z-10">
+                            Our categories
+                        </h2>
+                        <div className="px-10">
+                            <ImageCarousel images={imagesCategorys} navigationPrevRef={prevRef3} navigationNextRef={nextRef3} />
+                        </div>
+                    </div>
+
+                    <div className="mt-[80px]">
+                        <h2 className="text-center text-3xl font-bold mb-6">
+                            Our Best Deals
+                        </h2>
+                        <div className="px-10">
+                            <CarrouselProducts products={products} navigationPrevRef={prevRef2} navigationNextRef={nextRef2} />
+                        </div>
+                    </div>
+
+                    <div className="bg-gray-300 p-6 rounded-[50px] flex flex-col lg:flex-row justify-center items-center bg-[#F5F5F5] w-full lg:h-[428px] relative overflow-hidden">
+
+                        <div className="lg:absolute top-[50px] left-[102px] text-center lg:text-left">
+                            <p className="text-4xl font-extrabold italic" style={{ letterSpacing: "0px", opacity: 1, color: "#FFAA01" }}>
+                                Happy Thanksgiving
+                            </p>
+                        </div>
+
+                        <div className="lg:absolute top-[160px] left-[104px] text-center lg:text-left">
+                            <p className="text-lg font-medium text-[#606060]" style={{ letterSpacing: "0px", opacity: 1 }}>
+                                See the best decorations for this celebration
+                            </p>
+                        </div>
+
+                        <div className="lg:absolute top-[240px] left-[102px]">
+                            <button className="w-[240px] h-[54px] bg-[#FFAA01] text-[#131313] font-medium rounded-[35px]">
+                                Shop Now
+                            </button>
+                        </div>
+
+                        <div className="relative flex flex-col items-center lg:items-start w-full">
+                            {/* Aquí se ajustan las clases para pantallas pequeñas */}
+                            <div className="flex flex-col sm:flex-row lg:flex-row space-y-6 sm:space-y-0 sm:space-x-6 lg:space-y-0 lg:space-x-6 z-[1] mt-6 lg:mt-0 w-full lg:absolute lg:top-[200px] lg:left-[92%] lg:transform lg:-translate-y-1/2 sm:absolute sm:top-[50%] sm:left-[62%] sm:transform sm:-translate-x-1/2 sm:-translate-y-1/2 sm:z-10">
+                                {products.slice(0, 2).map((product, index) => (
+                                    <div key={index} className="w-full lg:w-[200px] h-auto lg:h-[300px] bg-white rounded-lg shadow-lg flex flex-col items-center p-4 relative sm:w-[240px] sm:h-[280px]">
+                                        <img
+                                            src={product.image}
+                                            alt={`product ${index + 1}`}
+                                            className="w-[70%] h-[170px] object-cover rounded-t-lg mb-3 z-10 sm:w-[40%] sm:h-[120px]"
+                                        />
+                                        <div className={`absolute top-0 left-0 w-full h-[120px] ${index === 0 ? 'bg-[#F7527A]' : 'bg-[#F5F5F5]'} rounded-t-lg z-0 sm:h-[100px]`} />
+                                        <div className="absolute top-2 left-2 bg-[#FFAA01] text-white text-sm font-bold px-2 py-1 rounded-full z-20 sm:text-xs">
+                                            {product.percentDiscount}% off
+                                        </div>
+                                        <p className="text-xl font-semibold text-center mt-3 sm:text-lg">{product.product}</p>
+                                        <div className="flex justify-between items-center w-full px-2 mt-2">
+                                            <p className="text-lg font-bold text-[#F7527A] sm:text-base">${product.price}</p>
+                                            <p className="text-sm text-[#606060] sm:text-xs">{product.price}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Imagen */}
+                            <img
+                                src={shopImage}
+                                alt="location image"
+                                className="w-full lg:w-[535px] lg:ml-[790px] h-auto bg-transparent lg:rotate-[180deg] object-contain "
+                            />
+                        </div>
+                    </div>
 
                     <div className="mt-[80px]">
                         <h2 className="text-center text-3xl font-bold mb-6">
