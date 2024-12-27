@@ -165,18 +165,3 @@
     background-color: #F7527A; 
 }
 
-/* Ocultar flechas en pantallas pequeñas */
-@media (max-width: 768px) {
-    .swiper-button-next,
-    .swiper-button-prev{
-        display: none;
-    }
-}
-
-/* Flechas visibles en pantallas más grandes */
-@media (min-width: 769px) {
-    .swiper-button-next,
-    .swiper-button-prev {
-        display: block;
-    }
-}
