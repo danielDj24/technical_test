@@ -263,8 +263,9 @@
 
     /* Ajustar los botones de navegación */
     .nav-buttons-container {
+        object-fit: contain;
         left: 72%; /* Centrar los botones de navegación */
-        bottom: -100%; /* Colocar los botones justo debajo de la imagen */
+        bottom: -60%; /* Colocar los botones justo debajo de la imagen */
         transform: translateX(-50%); /* Ajustar el centrado */
         gap: 10px; /* Aumentar el espacio entre los botones */
     }
