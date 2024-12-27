@@ -23,7 +23,7 @@ const Menu = () => {
                     <a href="/">Home</a>
                     <a href="/">Products</a>
                     <a href="/">About</a>
-                    <a href="/">Contact</a>
+                    <a href="/contact_us">Contact</a>
                 </div>
                 <div className="menu-item-buttom-search font-sf-pro text-18 leading-32">
                     <input
