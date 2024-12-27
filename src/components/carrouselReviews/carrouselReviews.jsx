@@ -16,7 +16,6 @@ const ReviewCarousel = ({ reviews }) => {
         <div className="review-carousel-container">
             <Swiper
                 spaceBetween={14} 
-                slidesPerView={3}
                 loop={true}
                 autoplay={{
                     delay: 5000, 
@@ -33,6 +32,20 @@ const ReviewCarousel = ({ reviews }) => {
                 }}
                 modules={[Navigation, Pagination, Autoplay]}
                 className="review-swiper"
+                breakpoints={{
+                    320: {
+                        slidesPerView: 1, // 1 elemento en pantallas pequeñas
+                    },
+                    768: {
+                        slidesPerView: 2, // 2 elementos en pantallas medianas (tablets)
+                    },
+                    1024: {
+                        slidesPerView: 3, // 3 elementos en pantallas grandes
+                    },
+                    1280: {
+                        slidesPerView: 4, // 4 elementos en pantallas muy grandes
+                    },
+                }}
             >
 
                 {reviews.map((review, index) => (

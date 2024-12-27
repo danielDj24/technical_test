@@ -54,6 +54,25 @@
     font-size: 22px;
 }
 
+.shop-now-button {
+    position: absolute;
+    width:240px;
+    height: 54px;
+    margin-left: 20%;
+    margin-top: 360px;
+    background: #FFAA01 0% 0% no-repeat padding-box;
+    border-radius: 35px;
+    opacity: 1;
+    letter-spacing: 0px;
+    color: #131313;
+    text-align: center;
+}
+
+.shop-now-button:hover {
+    background-color: #e54464;
+}
+
+
 .banner-product {
     font-size: 17px;
     margin-left: 20%;

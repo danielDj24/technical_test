@@ -49,10 +49,11 @@ const Home = () => {
                     <BannerCarrousel banners={banners} />
                     
                     {/* Contenedor para las imágenes más pequeñas */}
-                    <div className="flex justify-center items-center space-x-8 my-8">
-                        <img src={saleImage} alt="Image 1" className="w-[370px] h-auto" />
-                        <img src={festImage} alt="Image 2" className="w-[370px] h-auto" />
+                    <div className="flex justify-center items-center space-y-8 my-8 flex-col sm:flex-row sm:space-y-0 sm:space-x-8">
+                        <img src={saleImage} alt="Image 1" className="w-[370px] sm:w-[300px] h-auto" />
+                        <img src={festImage} alt="Image 2" className="w-[370px] sm:w-[300px] h-auto" />
                     </div>
+
 
                     {/* Título y carrusel de productos */}
                     <div className="mt-[80px]">
@@ -64,24 +65,25 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="bg-gray-200 p-6 rounded-lg flex justify-center items-center bg-[#F5F5F5] w-full h-[200px]">
-                        <div className="flex items-center mx-4">
-                            <img src={locationImage} alt="location image" className="w-[328px] h-[328px] bg-transparent object-contain ml-4" />
-                            <div className="flex flex-col justify-center mr-8">
-                                <p className="text-lg text-[#F7527A]">Flower delivery to:</p>
-                                <p className="text-lg">East Hartford, Hartford, Manchester, Glastonbury,</p>
-                                <p className="text-lg">Bolton, Willimantic, West Hartford, East Windsor, North Windsor</p>
-                                <a href="#" className="underline text-[#F7527A]">Track your order.</a>
-                            </div>
-                        </div>
-                        <div className="flex items-center mx-4">
-                            <img src={securrityImage} alt="security image" className="w-[328px] h-[328px] bg-transparent object-contain mr-4" />
-                            <div className="flex flex-col justify-center mr-8">
-                                <p className="text-lg text-[#F7527A]">Our schedule:</p>
-                                <p className="text-lg">From 09:00 am to 04:00 pm Monday to Friday</p>
-                            </div>
-                        </div>
-                    </div>
+                    <div className="bg-gray-200 p-6 rounded-lg flex flex-col sm:flex-row justify-center items-center bg-[#F5F5F5] w-full h-auto">
+    <div className="flex items-center mx-4 mb-4 sm:mb-0 sm:max-w-[600px]">
+        <img src={locationImage} alt="location image" className="w-[200px] sm:w-[328px] h-[200px]   bg-transparent object-contain ml-2 sm:ml-4" />
+        <div className="flex flex-col justify-center sm:ml-6">
+            <p className="text-lg text-[#F7527A]">Flower delivery to:</p>
+            <p className="text-lg">East Hartford, Hartford, Manchester, Glastonbury,</p>
+            <p className="text-lg">Bolton, Willimantic, West Hartford, East Windsor, North Windsor</p>
+            <a href="#" className="underline text-[#F7527A]">Track your order.</a>
+        </div>
+    </div>
+    <div className="flex items-center mx-4 sm:max-w-[600px]">
+        <img src={securrityImage} alt="security image" className="w-[200px] sm:w-[328px] h-[200px]  bg-transparent object-contain mr-2 sm:mr-4" />
+        <div className="flex flex-col justify-center sm:ml-6">
+            <p className="text-lg text-[#F7527A]">Our schedule:</p>
+            <p className="text-lg">From 09:00 am to 04:00 pm Monday to Friday</p>
+        </div>
+    </div>
+</div>
+
 
                     <div className="mt-[80px] relative">
                         <div className="absolute inset-0 left-[450px] bg-[#F6DCDC] z-[-1] h-[340px] rounded-l-[58px]" />
@@ -177,7 +179,7 @@ const Home = () => {
                             Our payment methods
                         </h2>
                         {/* Contenedor de las imágenes */}
-                        <div className="flex justify-center space-x-12 ">
+                        <div className="grid grid-cols-3 gap-12 sm:grid-cols-2 lg:grid-cols-3">
                             {/* Imagen 1 */}
                             <img src={payment1} alt="Payment Method 1" className="w-[120px] h-[120px] object-contain" />
                             {/* Imagen 2 */}
@@ -196,6 +198,7 @@ const Home = () => {
                             <img src={payment8} alt="Payment Method 8" className="w-[120px] h-[120px] object-contain" />
                         </div>
                     </div>
+
 
                 </div>
             </div>

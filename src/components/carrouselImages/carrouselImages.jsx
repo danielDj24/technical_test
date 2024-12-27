@@ -16,7 +16,6 @@ const ImageCarousel = ({ images }) => {
         <div className="custom-image-carousel">
             <Swiper
                 spaceBetween={0}
-                slidesPerView={4}
                 loop={true}
                 autoplay={{
                     delay: 3000,
@@ -24,15 +23,29 @@ const ImageCarousel = ({ images }) => {
                 }}
                 pagination={{ clickable: true }}
                 navigation={{
-                    prevEl2: navigationPrevRef.current,
-                    nextEl2: navigationNextRef.current,
+                    prevEl: navigationPrevRef.current,
+                    nextEl: navigationNextRef.current,
                 }}
                 onBeforeInit={(swiper) => {
-                    swiper.params.navigation.prevEl2 = navigationPrevRef.current;
-                    swiper.params.navigation.nextEl2 = navigationNextRef.current;
+                    swiper.params.navigation.prevEl = navigationPrevRef.current;
+                    swiper.params.navigation.nextEl = navigationNextRef.current;
                 }}
                 modules={[Navigation, Pagination, Autoplay]}
                 className="custom-image-swiper"
+                breakpoints={{
+                    320: {
+                        slidesPerView: 1, // 1 imagen en pantallas pequeñas
+                    },
+                    768: {
+                        slidesPerView: 2, // 2 imágenes en pantallas medianas (tablets)
+                    },
+                    1024: {
+                        slidesPerView: 3, // 3 imágenes en pantallas grandes
+                    },
+                    1280: {
+                        slidesPerView: 4, // 4 imágenes en pantallas muy grandes
+                    },
+                }}
             >
                 {images.map((image, index) => (
                     <SwiperSlide key={index} className="custom-image-slide">
