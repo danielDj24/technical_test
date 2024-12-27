@@ -85,14 +85,8 @@ const CarrouselProducts = ({ products, navigationPrevRef, navigationNextRef }) =
             </Swiper>
 
             {/* Botones de navegación */}
-            <div
-                ref={navigationPrevRef}
-                className="custom-swiper-button-prev swiper-button-prev"
-            ></div>
-            <div
-                ref={navigationNextRef}
-                className="custom-swiper-button-next swiper-button-next"
-            ></div>
+            <div className="swiper-button-prev" ref={navigationPrevRef}></div>
+            <div className="swiper-button-next" ref={navigationNextRef}></div>
         </div>
     );
 };

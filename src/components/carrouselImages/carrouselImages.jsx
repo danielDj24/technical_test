@@ -15,7 +15,7 @@ const ImageCarousel = ({ images }) => {
     return (
         <div className="custom-image-carousel">
             <Swiper
-                spaceBetween={-30}
+                spaceBetween={0}
                 slidesPerView={4}
                 loop={true}
                 autoplay={{
