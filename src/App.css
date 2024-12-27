@@ -42,3 +42,21 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: 'SF Pro';
+  src: url('./assets/fonts/sf-pro-display/SFPRODISPLAYREGULAR.OTF') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro';
+  src: url('./assets/fonts/sf-pro-display/SFPRODISPLAYBOLD.OTF') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+
+

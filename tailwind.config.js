@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'sf-pro': ['Inter', 'sans-serif'],
+        'sf-pro': ['Sf Pro', 'sans-serif'],
        // Tu fuente personalizada
       },
       fontSize: {

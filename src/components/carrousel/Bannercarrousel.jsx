@@ -27,7 +27,7 @@ const BannerCarrousel = ({ banners }) => {
         <div className="banner-carousel-container">
             <div className="carousel-content">
                 <div className="carousel-info">
-                    <h1 className="banner-title">{banners[currentIndex].tittle}</h1>
+                    <h1 className="banner-title"><strong>{banners[currentIndex].tittle}</strong></h1>
                     <p className="banner-product"><strong><span className="new-word">New</span></strong> {banners[currentIndex].product}</p>
                     <p className="banner-price"><strong>{banners[currentIndex].price}</strong></p>
                 </div>
