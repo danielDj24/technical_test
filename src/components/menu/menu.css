@@ -174,3 +174,132 @@
     border: 1px solid #707070;
     border-radius: 50%;
 }
+
+/* Menú móvil */
+.menu-mobile {
+    display: none; 
+}
+
+.menu-phone {
+    display: flex;
+    justify-content: center;
+    margin-left: 100px;
+    align-items: center;
+    padding: 10px;
+    background: #FFFFFF;
+}
+
+.menu-phone .icon {
+    color: #F7527A;
+    margin-right: 10px;
+}
+
+.menu-mobile-header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px;
+    background: #FFFFFF;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-logo {
+    display: flex;
+    justify-content: flex-start; 
+    margin-left: -70px;
+}
+
+.menu-logo img {
+    width: 132px; 
+    height: auto;
+}
+
+.menu-mobile-actions {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    gap: 15px;
+}
+
+.menu-cart {
+    position: relative;
+}
+
+.menu-cart p {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: #FFAA01;
+    color: #131313;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+    background: #FFFFFF;
+    box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+.menu-overlay.open {
+    right: 0;
+}
+
+.menu-overlay-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+.menu-overlay-content .close-menu {
+    align-self: flex-end; /* Alinea el botón de cierre a la derecha */
+    cursor: pointer;
+}
+/* Responsividad */
+@media (max-width: 768px) {
+    .menu-desktop {
+        display: none; /* Ocultar el menú de escritorio en pantallas pequeñas */
+    }
+
+    .menu-mobile {
+        display: block; /* Mostrar el menú móvil */
+    }
+
+    .menu-hamburger {
+        display: block; /* Mostrar el icono del menú hamburguesa */
+    }
+
+    /* Mostrar teléfono, logo, carrito e íconos */
+    .menu-mobile .menu-phone,
+    .menu-mobile .menu-logo,
+    .menu-mobile .menu-cart {
+        display: block;
+    }
+
+    .menu-overlay-content {
+        padding-top: 10px; 
+        align-items: center;
+    }
+}
+
+.menu-hamburger {
+    display: none;
+}
+
+/* Cambiar el color de los íconos a negro */
+.menu-mobile-header .icon,
+.menu-mobile-actions .icon {
+    color: #000000; /* Color negro para los íconos */
+}
