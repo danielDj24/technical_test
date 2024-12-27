@@ -175,11 +175,11 @@ const Home = () => {
                     </div>
                     
                     <div className="mt-[90px]">
-                        <h2 className="text-center text-3xl font-bold ">
+                        <h2 className="text-center text-3xl font-bold">
                             Our payment methods
                         </h2>
                         {/* Contenedor de las imágenes */}
-                        <div className="grid grid-cols-3 gap-12 sm:grid-cols-2 lg:grid-cols-3">
+                        <div className="grid grid-cols-3 gap-12 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-8 xl:grid-cols-8">
                             {/* Imagen 1 */}
                             <img src={payment1} alt="Payment Method 1" className="w-[120px] h-[120px] object-contain" />
                             {/* Imagen 2 */}
@@ -198,8 +198,6 @@ const Home = () => {
                             <img src={payment8} alt="Payment Method 8" className="w-[120px] h-[120px] object-contain" />
                         </div>
                     </div>
-
-
                 </div>
             </div>
             <Footer />
